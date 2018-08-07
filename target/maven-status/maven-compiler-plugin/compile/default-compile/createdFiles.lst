@@ -1,0 +1,14 @@
+com\javasampleapproach\batchcsvpostgresql\config\BatchConfig.class
+com\javasampleapproach\batchcsvpostgresql\dao\CustomerDao.class
+com\javasampleapproach\batchcsvpostgresql\step\Processor.class
+com\javasampleapproach\batchcsvpostgresql\step\Reader.class
+com\javasampleapproach\batchcsvpostgresql\step\Reader$1$2.class
+com\javasampleapproach\batchcsvpostgresql\dao\impl\CustomerDaoImpl.class
+com\javasampleapproach\batchcsvpostgresql\step\Reader$1.class
+com\javasampleapproach\batchcsvpostgresql\dao\impl\CustomerDaoImpl$1.class
+com\javasampleapproach\batchcsvpostgresql\step\Writer.class
+com\javasampleapproach\batchcsvpostgresql\step\Reader$1$1.class
+com\javasampleapproach\batchcsvpostgresql\controller\WebController.class
+com\javasampleapproach\batchcsvpostgresql\SpringBatchCsvPostgreSqlApplication.class
+com\javasampleapproach\batchcsvpostgresql\model\Customer.class
+com\javasampleapproach\batchcsvpostgresql\step\Listener.class
