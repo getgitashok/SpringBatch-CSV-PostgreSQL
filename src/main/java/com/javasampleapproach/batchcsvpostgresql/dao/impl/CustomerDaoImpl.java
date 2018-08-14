@@ -34,11 +34,31 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao {
 		getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
 				Customer customer = Customers.get(i);
-				ps.setLong(1, customer.getProj_id());
+				ps.setInt(1, customer.getProj_id());
 				ps.setString(2, customer.getOpprtunity_name());
 				ps.setString(3, customer.getAsso_proj());
 				ps.setString(4, customer.getDescri());
 				ps.setString(5, customer.getOwner());
+			}
+
+			public int getBatchSize() {
+				return Customers.size();
+			}
+		});
+
+	}
+	
+	@Override
+	public void update(List<? extends Customer> Customers) {
+		String sql = "UPDATE customer SET opprtunity_name=?, asso_proj=?, descri=?, owner=? where proj_id=?";
+		getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				Customer customer = Customers.get(i);
+				ps.setInt(5, customer.getProj_id());
+				ps.setString(1, customer.getOpprtunity_name());
+				ps.setString(2, customer.getAsso_proj());
+				ps.setString(3, customer.getDescri());
+				ps.setString(4, customer.getOwner());
 			}
 
 			public int getBatchSize() {
@@ -56,7 +76,7 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao {
 		List<Customer> result = new ArrayList<Customer>();
 		for (Map<String, Object> row : rows) {
 			Customer customer = new Customer();
-			customer.setProj_id((Long) row.get("proj_id"));
+			customer.setProj_id((Integer) row.get("proj_id"));
 			customer.setOpprtunity_name((String) row.get("opprtunity_name"));
 			customer.setAsso_proj((String) row.get("asso_proj"));
 			customer.setDescri((String) row.get("descri"));

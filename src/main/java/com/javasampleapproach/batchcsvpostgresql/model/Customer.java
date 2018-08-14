@@ -1,7 +1,7 @@
 package com.javasampleapproach.batchcsvpostgresql.model;
 
 public class Customer {
-	private long proj_id;
+	private Integer proj_id;
 	private String opprtunity_name;
 	private String asso_proj;
 	private String descri;
@@ -10,7 +10,7 @@ public class Customer {
 	public Customer() {
 	}
 
-	public Customer(long proj_id, String opprtunity_name, String asso_proj, String descri, String owner) {
+	public Customer(Integer proj_id, String opprtunity_name, String asso_proj, String descri, String owner) {
 		this.proj_id = proj_id;
 		this.opprtunity_name = opprtunity_name;
 		this.asso_proj = asso_proj;
@@ -18,11 +18,11 @@ public class Customer {
 		this.owner = owner;
 	}
 
-	public long getProj_id() {
+	public Integer getProj_id() {
 		return proj_id;
 	}
 
-	public void setProj_id(long proj_id) {
+	public void setProj_id(Integer proj_id) {
 		this.proj_id = proj_id;
 	}
 
